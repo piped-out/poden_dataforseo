@@ -1,0 +1,167 @@
+version: 2
+models:
+- name: dataforseo_keyword_figures
+  description: Standard DataForSEO keyword figures.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: keyword
+    data_type: string
+  - name: location_code
+    data_type: int64
+  - name: language_code
+    data_type: string
+  - name: search_volume
+    data_type: int64
+  - name: cpc
+    data_type: float64
+  - name: competition
+    data_type: float64
+  - name: competition_level
+    data_type: string
+  - name: keyword_difficulty
+    data_type: int64
+  - name: main_intent
+    data_type: string
+  - name: data_as_of
+    data_type: timestamp
+  - name: run_id
+    data_type: string
+  - name: run_started_at
+    data_type: timestamp
+  - name: contract_relation
+    data_type: string
+- name: dataforseo_keyword_monthly_volume
+  description: Standard DataForSEO keyword monthly volume.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: keyword
+    data_type: string
+  - name: location_code
+    data_type: int64
+  - name: language_code
+    data_type: string
+  - name: month
+    data_type: date
+  - name: search_volume
+    data_type: int64
+  - name: data_as_of
+    data_type: timestamp
+  - name: run_id
+    data_type: string
+  - name: contract_relation
+    data_type: string
+- name: dataforseo_serp_observations
+  description: Standard DataForSEO serp observations.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: source
+    data_type: string
+  - name: observation_key
+    data_type: string
+  - name: keyword
+    data_type: string
+  - name: location_code
+    data_type: int64
+  - name: language_code
+    data_type: string
+  - name: observed_at
+    data_type: timestamp
+  - name: search_settings
+    data_type: struct<search_engine string, location_code int64, location_name string, language_code string,
+      language_name string, device string, os string, depth int64>
+  - name: items
+    data_type: array<struct<type string, rank_group int64, rank_absolute int64, domain string, url string,
+      title string>>
+  - name: run_id
+    data_type: string
+  - name: contract_relation
+    data_type: string
+- name: dataforseo_domain_rankings
+  description: Standard DataForSEO domain rankings.
+  config:
+    contract:
+      enforced: true
+    cluster_by:
+    - domain
+    - keyword
+  columns:
+  - name: domain
+    data_type: string
+  - name: keyword
+    data_type: string
+  - name: location_code
+    data_type: int64
+  - name: language_code
+    data_type: string
+  - name: run_id
+    data_type: string
+  - name: run_started_at
+    data_type: timestamp
+  - name: rank_group
+    data_type: int64
+  - name: rank_absolute
+    data_type: int64
+  - name: url
+    data_type: string
+  - name: etv
+    data_type: float64
+  - name: search_volume
+    data_type: int64
+  - name: contract_relation
+    data_type: string
+- name: dataforseo_pulls
+  description: Standard DataForSEO pulls.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: run_id
+    data_type: string
+  - name: run_started_at
+    data_type: timestamp
+  - name: date
+    data_type: date
+  - name: endpoint
+    data_type: string
+  - name: request_kind
+    data_type: string
+  - name: run_settings
+    data_type: string
+  - name: rows_held
+    data_type: int64
+  - name: calls_with_rows
+    data_type: int64
+  - name: cost_usd_of_calls_with_rows
+    data_type: float64
+  - name: contract_relation
+    data_type: string
+- name: dataforseo_coverage
+  description: Standard DataForSEO coverage.
+  config:
+    contract:
+      enforced: true
+  columns:
+  - name: contract_relation
+    data_type: string
+  - name: location_code
+    data_type: int64
+  - name: language_code
+    data_type: string
+  - name: query_settings
+    data_type: string
+  - name: rows_held
+    data_type: int64
+  - name: overlap_rows
+    data_type: int64
+  - name: last_observed_total
+    data_type: int64
+  - name: last_run_id
+    data_type: string
+  - name: last_run_date
+    data_type: date

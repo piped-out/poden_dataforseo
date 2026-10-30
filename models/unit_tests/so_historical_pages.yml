@@ -1,0 +1,18 @@
+unit_tests:
+- name: so_historical_pages
+  model: dataforseo_serp_observations
+  config:
+    enabled: '{{ var(''poden_dataforseo_unit_tests'', false) }}'
+  given:
+  - input: source('poden', 'contract_00000000000000000000000000000001')
+    format: sql
+    fixture: so_historical_pages_input_1
+  - input: source('poden', 'contract_00000000000000000000000000000005')
+    format: sql
+    fixture: empty_input_5
+  - input: source('poden', 'contract_00000000000000000000000000000006')
+    format: sql
+    fixture: empty_input_6
+  expect:
+    format: sql
+    fixture: so_historical_pages_expected

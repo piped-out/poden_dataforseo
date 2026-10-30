@@ -1,0 +1,52 @@
+version: 2
+sources:
+- name: poden
+  database: fixture-project
+  schema: raw
+  tables:
+  - name: contract_00000000000000000000000000000001
+    identifier: input_1
+    meta:
+      kind: data_contract
+      contract_id: 00000000-0000-0000-0000-000000000001
+      fulfillment_mode: materialization
+      connector_type: dataforseo-labs
+      request_kind: keyword_list
+  - name: contract_00000000000000000000000000000002
+    identifier: input_2
+    meta:
+      kind: data_contract
+      contract_id: 00000000-0000-0000-0000-000000000002
+      fulfillment_mode: materialization
+      connector_type: dataforseo-labs
+      request_kind: domain_rankings
+  - name: contract_00000000000000000000000000000003
+    identifier: input_3
+    meta:
+      kind: data_contract
+      contract_id: 00000000-0000-0000-0000-000000000003
+      fulfillment_mode: materialization
+      connector_type: dataforseo-labs
+      request_kind: domain_pair
+  - name: contract_00000000000000000000000000000004
+    identifier: input_4
+    meta:
+      kind: data_contract
+      contract_id: 00000000-0000-0000-0000-000000000004
+      fulfillment_mode: materialization
+      connector_type: dataforseo-labs
+      request_kind: keyword_expansion
+  - name: contract_00000000000000000000000000000005
+    identifier: input_5
+    meta:
+      kind: data_contract
+      contract_id: 00000000-0000-0000-0000-000000000005
+      fulfillment_mode: materialization
+      connector_type: dataforseo-serp-advanced
+  - name: contract_00000000000000000000000000000006
+    identifier: input_6
+    meta:
+      kind: data_contract
+      contract_id: 00000000-0000-0000-0000-000000000006
+      fulfillment_mode: materialization
+      connector_type: dataforseo-serp-advanced

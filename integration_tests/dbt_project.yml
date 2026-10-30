@@ -1,0 +1,6 @@
+name: fixture
+version: '1.0'
+config-version: 2
+profile: fixture
+vars:
+  poden_dataforseo_unit_tests: true
