@@ -2,24 +2,22 @@
 
 A dbt package combining a Workspace's Poden DataForSEO Labs contracts and
 SERP Advanced observations into six standard table models. Requires dbt
-1.12 or later and the BigQuery adapter. The package is verified locally and
-ready to move to its public repository; it has not been published or released.
+1.12 or later and the BigQuery adapter.
 
 ## Install and use
 
-For development, add the package to the root project's `packages.yml`:
+Add the package to the root project's `packages.yml`, pinned to a release:
 
 ```yaml
 packages:
-  - local: /absolute/path/to/poden_dataforseo
+  - git: "https://github.com/piped-out/poden_dataforseo.git"
+    revision: v0.1.0
 ```
 
 Download the Workspace's generated sources and macros from Poden and place
 them in the root project. They include `poden_contract_relations`, which
 selects every matching contract and records its dbt source dependency.
 A new contract joins the models at the next parse without editing SQL.
-A hosted Pipeline needs a published package dependency instead of a local path;
-that installation address will be supplied with the first release.
 
 With a BigQuery profile configured for the root project, run:
 
