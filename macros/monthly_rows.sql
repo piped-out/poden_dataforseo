@@ -1,4 +1,5 @@
-{# Each history entry has its own provider date, unlike current metrics. #}
+{# Each history entry has its own provider date, unlike current metrics.
+   DataForSEO writes it as "YYYY-MM-DD HH:MM:SS +00:00", which CAST rejects. #}
 {% macro poden_dataforseo_monthly_rows(kind, relation) %}
 select keyword, location_code, language_code,
   date(volume.year, volume.month, 1) as month, volume.search_volume,
@@ -10,7 +11,7 @@ unnest(monthly_searches) as volume
 union all
 select keyword, location_code, language_code,
   date(volume.year, volume.month, 1) as month, volume.search_volume,
-  cast(history.keyword_info.last_updated_time as timestamp) as data_as_of,
+  parse_timestamp('%Y-%m-%d %H:%M:%S %Ez', history.keyword_info.last_updated_time) as data_as_of,
   run_id, run_started_at, call_index, call_row_index,
   '{{ relation }}' as contract_relation
 from {{ relation }}, unnest(volume_history.history) as history,

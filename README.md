@@ -6,12 +6,17 @@ SERP Advanced observations into six standard table models. Requires dbt
 
 ## Install and use
 
-Add the package to the root project's `packages.yml`, pinned to a release:
+In a Poden Pipeline, use `poden cloud pipeline packages add` to add the
+approved release pinned to its exact commit. A tag entry shows as unrecognised
+in Poden's package list. See the Pipeline skill for the trial and request flow.
+
+For dbt outside Poden, add the package to the root project's `packages.yml`,
+pinned to a release:
 
 ```yaml
 packages:
   - git: "https://github.com/piped-out/poden_dataforseo.git"
-    revision: v0.1.0
+    revision: v0.1.1
 ```
 
 Download the Workspace's generated sources and macros from Poden and place
