@@ -9,7 +9,7 @@ select
   cast(null as int64) as call_row_index,
   cast(null as int64) as call_offset,
   cast(null as int64) as call_total_count,
-  cast(null as float64) as call_cost_usd,
+  cast(null as float64) as request_cost_usd,
   cast(null as int64) as location_code,
   cast(null as string) as language_code,
   cast(null as string) as keyword,

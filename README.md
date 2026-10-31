@@ -16,7 +16,7 @@ pinned to a release:
 ```yaml
 packages:
   - git: "https://github.com/piped-out/poden_dataforseo.git"
-    revision: v0.1.1
+    revision: v0.1.2
 ```
 
 Download the Workspace's generated sources and macros from Poden and place
@@ -57,7 +57,9 @@ Domain rankings is clustered by domain, then keyword.
 Coverage counts bought rows, not current completeness. It excludes keyword-list
 fills and does not change after a pull holding no rows. Domain totals are
 only over the rows held, not the provider's whole-domain totals. Pull costs
-count each call once, even when its cost appears on every returned row.
+read `request_cost_usd`, the cost of the request the row came from, repeated
+on every row of that request. Count it once per `run_id` and `call_index`,
+or use `dataforseo_pulls`; summing raw rows overstates spend.
 
 ## Package verification
 
