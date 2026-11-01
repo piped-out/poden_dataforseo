@@ -74,7 +74,7 @@ models:
     data_type: timestamp
   - name: search_settings
     data_type: struct<search_engine string, location_code int64, location_name string, language_code string,
-      language_name string, device string, os string, depth int64>
+      language_name string, device string, os string, depth int64, calculate_rectangles bool>
   - name: items
     data_type: array<struct<type string, rank_group int64, rank_absolute int64, domain string, url string,
       title string>>

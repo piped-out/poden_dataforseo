@@ -16,7 +16,7 @@ pinned to a release:
 ```yaml
 packages:
   - git: "https://github.com/piped-out/poden_dataforseo.git"
-    revision: v0.1.2
+    revision: v0.1.3
 ```
 
 Download the Workspace's generated sources and macros from Poden and place

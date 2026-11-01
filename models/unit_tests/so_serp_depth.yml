@@ -12,7 +12,7 @@ unit_tests:
     fixture: so_serp_depth_input_5
   - input: source('poden', 'contract_00000000000000000000000000000006')
     format: sql
-    fixture: empty_input_6
+    fixture: so_serp_depth_input_6
   expect:
     format: sql
     fixture: so_serp_depth_expected
